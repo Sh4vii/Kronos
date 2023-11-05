@@ -1,0 +1,327 @@
+
+:root {
+    --primary: #0a0a0e;
+    --secondary: #ff2c50;
+    --light-color: #0f0f13;
+    --text-color: #727272;
+    --btn-color: #19181D;
+    --hover-color: #0a0a0e;
+    --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in;
+}
+::-webkit-scrollbar{
+    width: 4px;
+}
+::-webkit-scrollbar-track{
+    background: var(--light-color);
+}
+::-webkit-scrollbar-thumb{
+    background: var(--secondary);
+}
+html {
+    overflow-x: hidden;
+    -scroll-behavior: smooth;
+    font-family: 'Rubik', sans-serif;
+    color: #ffffff;
+  }
+.btn-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: auto;
+}
+button{
+    padding: 15px 24px;
+    border-radius: 30px;
+    border: none;
+    background: var(--btn-color);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease-in;
+}
+button:hover{
+    background: var(--hover-color);
+}
+.short{
+    width: 50%;
+}
+.long{
+    width: 100%;
+}
+.long:hover{
+    width: 100%;
+    border: 1px solid var(--text-color);
+}
+.red{
+    color: var(--secondary);
+}
+body{
+    background-color: var(--primary);
+    padding: 0 8%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    
+}
+.header h1{
+    font-size: 26px;
+}
+.header span{
+    color: var(--secondary);
+}
+.app-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    padding-bottom: 20px;
+    margin-bottom: auto;
+}
+.app-container .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-radius: 20px;
+    background-color: var(--light-color);
+    height: 100%;
+}
+.app-container .container.twin{
+    background-color: var(--primary);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: none;
+    align-items: none;
+}
+.flexbox{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+.clock{
+    display: flex;
+    width: 20rem;
+    height: 20rem;
+    margin: 2rem auto;
+    border-radius: 15rem;
+    position: relative;
+    background-color: var(--primary);
+    background-image: url("face.png");
+    background-size: cover;
+    background-position: center;
+}
+.clock-face{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hand{
+    width: 25%;
+    height:6px;
+    border-radius: 4px;
+    background-color: rgb(240, 255, 254);
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+}
+.second-hand{
+    transition: 0.3s ease infinite;
+    background-color: var(--secondary);
+    transition-timing-function: cubic-bezier(0.34, 2.2, 0.77, 0.88);;
+}
+.min-hand{
+    width: 35%;
+    left: 15%;
+    background-color: rgb(255, 255, 255);
+    transition: 0.5s ease-in-out;
+}
+.hour-hand{
+    background-color: rgb(255, 255, 255);
+    transition: 1s linear;
+}
+.center-dot{
+    height: 15px;
+    width: 15px;
+    border-radius: 15px;
+    background-color: white;
+    display: flex;
+    top: 51%;
+    left: 50%;
+    z-index: 10;
+}
+.digital-clock{
+   position: absolute;
+   top: 75%;
+   
+}
+.time{
+    color: white;
+    font-size: 26px;
+    font-family: monospace;
+    font-weight: 400;
+}
+.timer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px ;
+    background-color: var(--light-color);
+}
+.timer p{
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.timer span{
+    color: var(--text-color);
+    font-size: 12px;
+    margin: auto 2px;
+}
+.timer .set-timer-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 5px 0;
+}
+.timer .set-timer-container input{
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: 800;
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    width: 55px;
+    margin: auto 5px;
+}
+.timer .set-timer-container .column{
+    font-size: 40px;
+    font-weight: 800;
+    color: #ffffff;
+}
+@media (max-width: 1350px){
+    body{
+        padding: 6%;
+    }
+    .flexbox{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        width: 100%;
+    }
+}
+@media (max-width: 860px){
+    .clock{
+        width: 15rem;
+        height: 15rem;
+    }
+    .timer{
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 660px){
+    ::-webkit-scrollbar{
+        width: 0;
+    }
+    body{
+        padding: 0 4%;
+        height: 100%;
+    }
+    .app-container{
+        flex-direction: column;
+    }
+    .app-container .container{
+        width: 100%;
+    }
+    .flexbox{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        width: 100%;
+        overflow-y: none;
+        padding: 0;
+    }
+}
+@media (max-width: 450px){
+    .clock{
+        width: 13rem;
+        height: 13rem;
+    }
+    .hand{
+        height:3px;
+        border-radius: 2px;
+    }
+    .time{
+        color: white;
+        font-size: 20px;
+        font-family: monospace;
+        font-weight: 400;
+    }   
+    .timer .set-timer-container input{
+        font-size: 30px;
+        font-weight: 800;
+        width: 40px;
+        margin: auto 3px;
+    } 
+}@media (max-width: 280px){
+    .clock{
+        width: 9rem;
+        height: 9rem;
+        
+    }
+    .hand{
+        height:2px;
+        border-radius: 2px;
+    }
+    .time{
+        color: white;
+        font-size: 16px;
+        font-family: monospace;
+        font-weight: 400;
+    }
+    .timer span{
+        color: var(--text-color);
+        font-size: 10px;
+        margin: auto 2px;
+    }
+    
+}
