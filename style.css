@@ -150,7 +150,7 @@ body{
 
 .hand{
     width: 25%;
-    height:6px;
+    height:4px;
     border-radius: 4px;
     background-color: rgb(240, 255, 254);
     position: absolute;
@@ -188,6 +188,10 @@ body{
    position: absolute;
    top: 75%;
    
+}
+
+.dialog-box{
+    display: flex;
 }
 .time{
     color: white;
@@ -237,6 +241,46 @@ body{
     font-size: 40px;
     font-weight: 800;
     color: #ffffff;
+}
+.countdown-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: var(--light-color);
+    border-radius: 20px;
+    padding: 20px;
+}
+.countdown-container p{
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+.countdown-container h1{
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.countdown-container h4{
+    font-weight: 400;
+    font-size: 12px;
+    margin-left: 20px;
+    color: var(--text-color);
+}
+.countdown-container .end{
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+.delete-div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px ;
+    background-color: var(--light-color);
+}
+.delete-div p{
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 14px;
 }
 @media (max-width: 1350px){
     body{
