@@ -30,13 +30,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![./screenshot.jpg](./screenshot.jpg)
 
 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://sh4vii.github.io/Kronos/)
+- Solution URL: [View Project](https://sh4vii.github.io/Kronos/)
 
 
 ## My process
