@@ -4,7 +4,7 @@ const minHand = document.querySelector(".min-hand");
 const hourHand = document.querySelector(".hour-hand");
 const digitalTime = document.querySelector(".time");
 
-function setDate(){
+function setTime(){
     const now = new Date();
     const seconds = now.getSeconds();
     const secondsDegree = Math.round(((seconds / 60) * 360) + 90);
@@ -24,12 +24,12 @@ function setDate(){
     hourHand.style.transform = `rotate(${hoursDegree}deg)`;
 
 
-    let time = `${hours}:${mins}`;
+    let time = `${hours < 10 ? '0' : ''}${hours}:${mins < 10 ? '0' : ''}${mins}`;
 
     digitalTime.innerHTML  = time;
 }
     
-setInterval(setDate, 1000);
+setInterval(setTime, 1000);
 
 // End of Code for the clock feature
 
@@ -37,6 +37,10 @@ setInterval(setDate, 1000);
 const flexBox = document.querySelector(".flexbox");
 const newTimer = document.querySelector("#new-timer");
 newTimer.addEventListener("click", createTimer);
+
+//The countDown functionality is managed through the createTimer function
+//The function creates the Timer components. 
+//The timer components contains the timerDiv
 
 function createTimer(){
     //Create you date object
@@ -47,9 +51,9 @@ function createTimer(){
 
     let time = `${hours < 10 ? '0' : ''}${hours}:${mins < 10 ? '0' : ''}${mins}`;
 
-    //create dialog-box
-    const dialogBox = document.createElement("div");
-    dialogBox.classList.add("dialog-box");
+    //create timerComponent div.
+    const timerComponent = document.createElement("div");
+    timerComponent.classList.add("timer-Component");
 
     //create the timer div
     const timerDiv = document.createElement("div");
@@ -71,16 +75,19 @@ function createTimer(){
     //create the hour input
     const timerHour = document.createElement("input");
     timerHour.classList.add("hours");
-    timerHour.value = "00"
+    timerHour.placeholder = "00"
+    timerHour.setAttribute("maxlength", "2");
 
     //create the column span
     const column = document.createElement("span");
+    column.innerText = ":";
     column.classList.add("column");
 
     //create the minutes input
     const timerMinute= document.createElement("input");
     timerMinute.classList.add("minutes");
-    timerMinute.value = "00"
+    timerMinute.placeholder = "00"
+    timerMinute.setAttribute("maxlength", "2");
 
     //create the minutes input lable
     const inputLabel2 = document.createElement("span");
@@ -151,6 +158,7 @@ function createTimer(){
                 }
             },1000)
 
+            //This function displays time left on the cound down timer
             function displayTimeLeft(secondsLeft){
                 const remainderSeconds = secondsLeft % 60
                 const minutes = Math.floor((secondsLeft/60) % 60);
@@ -227,7 +235,7 @@ function createTimer(){
 
                 yesBtn.addEventListener("click", ()=>{
                     clearInterval(liveCountDown)
-                    dialogBox.remove();
+                    timerComponent.remove();
                 })
                 
                 //Append delete elements
@@ -237,7 +245,7 @@ function createTimer(){
                 countDownDiv.style.display = "none";
 
                 //append delete div to dialog box
-                dialogBox.appendChild(deleteDiv);
+                timerComponent.appendChild(deleteDiv);
             })
             
             //Create the reset Button
@@ -249,7 +257,7 @@ function createTimer(){
             resetBtn.addEventListener("click", ()=>{
                 clearInterval(liveCountDown);
                 countDownDiv.remove()
-                dialogBox.append(timerDiv);
+                timerComponent.append(timerDiv);
             })
 
             //Append the elements to the countdown container Div
@@ -259,7 +267,7 @@ function createTimer(){
             timerDiv.remove();
 
             //Append countdown container Div
-            dialogBox.append(countDownDiv);
+            timerComponent.append(countDownDiv);
 
 
         }
@@ -272,10 +280,10 @@ function createTimer(){
     timerDiv.append(btnContainer);
 
     //append timerDiv to dialog-box
-    dialogBox.appendChild(timerDiv);
+    timerComponent.appendChild(timerDiv);
     
     //append dialog-box to flexboxs
-    flexBox.appendChild(dialogBox);    
+    flexBox.appendChild(timerComponent);    
 
 }
 
