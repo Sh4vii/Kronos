@@ -234,12 +234,17 @@ body{
     background: transparent;
     color: #ffffff;
     border: none;
+    border-radius: 10px;
     width: 55px;
     margin: auto 5px;
     text-align: right;
 }
 .timer .set-timer-container input::placeholder{
     color: #ffffff;
+}
+.timer .set-timer-container input:focus{
+    background: var(--light-color);
+    outline-color: var(--secondary);
 }
 .timer .set-timer-container .column{
     font-size: 40px;

@@ -121,8 +121,8 @@ function createTimer(){
     function startCountDown() {
 
         //Get the value of the hour and minute
-        const setHour = parseInt(timerHour.value);
-        const setMinutes = parseInt(timerMinute.value);
+        const setHour = parseInt(timerHour.value != "" ? timerHour.value : timerHour.value = 00);
+        const setMinutes = parseInt(timerMinute.value != "" ? timerMinute.value : timerMinute.value = 00);
 
         //Calculate the total minutes
         const totalMinutes = ((setHour * 60) + setMinutes) * 60;
