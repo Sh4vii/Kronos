@@ -11,10 +11,7 @@ This is a beginner project that integrates a clock with a countdown timer.
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 
 
@@ -28,10 +25,15 @@ Users should be able to:
 - View the optimal layout for the component depending on their device's screen size
 - **Bonus**: See the chat interface animate on the initial load
 
+### Screenshot
+
+![Preview](./Screenshot.jpg)
+
+
 
 ### Links
 
-- Solution URL: [View Project](https://sh4vii.github.io/Kronos/)
+- Solution URL: [Add solution URL here](https://sh4vii.github.io/Kronos/)
 
 
 ## My process
@@ -55,5 +57,4 @@ Users should be able to:
 
 - Name: Shavii
 
-## Acknowledgments
 
